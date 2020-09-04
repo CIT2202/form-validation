@@ -10,27 +10,7 @@ if(isset($_POST["submit"])){
     $email = $_POST["email"];
   }
 
-  if(empty($_POST["fullname"])){
-    $validForm = false;
-  }else{
-    $fullname = $_POST["fullname"];
-  }
-
-  if(empty($_POST["phone"])){
-    $validForm = false;
-  }else{
-    $phone = $_POST["phone"];
-  }
-
-  if(!isset($_POST["hear"])){
-    $validForm = false;
-  }else{
-    $hear = $_POST["hear"];
-  }
-
-  if(!isset($_POST["terms"])){
-    $validForm = false;
-  }
+  //add some more if statements in here to test the other form controls.
 
 }else{
   //terminates the current script see https://www.php.net/manual/en/function.exit.php
@@ -51,10 +31,6 @@ if(isset($_POST["submit"])){
 if($validForm){
   //we have passed all the tests so we can display the form data
   echo "<p> You entered an email address of {$email}.</p>";
-  echo "<p> You entered a fullname of {$fullname}.</p>";
-  echo "<p> You entered a phone number of {$phone}.</p>";
-  echo "<p> You heard about carboot.com through a {$hear}.</p>";
-  echo "<p> You agreed to the terms and conditions.</p>";
 }else{
   echo "<p>You need to complete all the fields. <a href='html-forms.html'>Go back and try again.</a></p>";
 }
