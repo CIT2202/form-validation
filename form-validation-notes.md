@@ -132,7 +132,7 @@ Form processing code can quickly become messy. We should try to keep the PHP cod
 * Assign values to variables.
 * The PHP in the HTML is used for displaying messages.
 
-Have a look at the following example. The large block of PHP at the top of the page doesn't feature any echo statements. instead we store messages in variables e.g. ```$err_msg```. The PHP in the actual HTML page is simply used to display messages for the user.
+Have a look at the following example. The large block of PHP at the top of the page doesn't feature any echo statements. Instead we store messages in variables e.g. ```$err_msg```. See how we concatenate the error messages i.e. ```$err_msg.=```. This means add to the existing string. The PHP in the actual HTML page is simply used to display messages for the user.
 
 ```html
 <form action="somepage.php" method="POST">
