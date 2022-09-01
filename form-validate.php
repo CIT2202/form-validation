@@ -14,7 +14,7 @@ if(isset($_POST["submit"])){
 
 }else{
   //terminates the current script see https://www.php.net/manual/en/function.exit.php
-  exit("You shouldn't have got to this page.");
+  exit("You shouldn't have got to this page.</body></html>");
 }
 
 
