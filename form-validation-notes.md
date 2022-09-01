@@ -69,8 +69,8 @@ Here's the page that will process the form, *city_test.php*.
 ```php
 <?php
 if(isset($_POST["answer"])){
-    $answer=$_POST["answer"];
-    if($answer==='Caracas'){
+    $answer = $_POST["answer"];
+    if($answe r=== 'Caracas'){
         echo 'Well done you are correct';
     }else{
         echo "You answered {$answer} that's not right";
@@ -90,11 +90,11 @@ if(isset($_POST["answer"])){
 We can't use *isset* with text fields because text fields will always have a value. If the user doesn't enter anything this value will be an empty string i.e. "". Instead we need to test if the variable is *empty*, the variable exists but doesn't have a value. Have a look at the following example.
 
 ```html
-<form action="somepage.php" method="POST">
+<form action = "somepage.php" method = "POST">
 <p>
-<label for="uname">Name:</label><input type="text" name="uname" id="uname">
-<label for="col">Favourite colour:</label><input type="text" name="col" id="col">
-<input type="submit" name="submitBtn">
+<label for = "uname">Name:</label><input type = "text" name = "uname" id = "uname">
+<label for = "col">Favourite colour:</label><input type="text" name = "col" id = "col">
+<input type ="submit" name = "submitBtn">
 </p>
 </form>
 ```
@@ -120,8 +120,8 @@ In this example, if the user hasn't entered anything into the text box, the erro
 A common approach when form processing is to store values from ```$_POST``` in another variable. This variable will be shorter in length so will be easier to work with. Here's an example:
 ```php
 <?php
-$uname=$_POST["uname"];
-$col=$_POST["col"];
+$uname = $_POST["uname"];
+$col = $_POST["col"];
 echo "Your favourite colour is {$col}.";
 ?>
 ```
@@ -150,22 +150,22 @@ This is the page that will process the form, somepage.php.
 <?php
 $uname;
 $col;
-$err_msg="";
-$errors=false;
+$err_msg = "";
+$errors = false;
 if(isset($_POST['submitBtn'])){ //has the form been submitted
-    $uname=trim($_POST['uname']); //trim removes whitespace form the start and end of a string
-    $col=trim($_POST['col']);
+    $uname = trim($_POST['uname']); //trim removes whitespace form the start and end of a string
+    $col = trim($_POST['col']);
     if(empty($uname)){ //have they entered a username
-        $errors=true;
-        $err_msg.="<p>You need to enter a username.</p>";
+        $errors = true;
+        $err_msg.= "<p>You need to enter a username.</p>";
     }
     if(empty($col)){ //have they entered a colour
-        $errors=true;
-        $err_msg.="<p>You need to enter a colour.</p>";
+        $errors = true;
+        $err_msg.= "<p>You need to enter a colour.</p>";
     }
 }else{
-    $errors=true;
-    $err_msg.="<p>You shouldn't have got to this page</p>";
+    $errors = true;
+    $err_msg.= "<p>You shouldn't have got to this page</p>";
 }   
 ?>
 <!DOCTYPE HTML>
