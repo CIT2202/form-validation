@@ -61,7 +61,7 @@ We can also *isset* to check if the user has selected from a group of radio butt
    <label for="sucre_rb">Lima</label>
    <input type="radio" id="lima_rb" value="Lima" name="answer">
 </fieldset>    
-<input type="submit"/>
+<input type="submit" name="submitBtn">
 </form>
 ...
 ```
