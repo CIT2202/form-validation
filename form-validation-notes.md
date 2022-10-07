@@ -53,13 +53,14 @@ We can also *isset* to check if the user has selected from a group of radio butt
 ...
 <form action="city_test.php" method="POST">
 <fieldset>
-<legend>What is the capital city of Venezuela?</legend>
-<label for="sucre_rb">Sucre</label>
-<input type="radio" id="sucre_rb" value="Sucre" name="answer">
-<label for="sucre_rb">Caracas</label>
-<input type="radio" id="caracas_rb" value="Caracas" name="answer">
-<label for="sucre_rb">Lima</label>
-<input type="radio" id="lima_rb" value="Lima" name="answer">
+   <legend>What is the capital city of Venezuela?</legend>
+   <label for="sucre_rb">Sucre</label>
+   <input type="radio" id="sucre_rb" value="Sucre" name="answer">
+   <label for="sucre_rb">Caracas</label>
+   <input type="radio" id="caracas_rb" value="Caracas" name="answer">
+   <label for="sucre_rb">Lima</label>
+   <input type="radio" id="lima_rb" value="Lima" name="answer">
+</fieldset>    
 <input type="submit"/>
 </form>
 ...
