@@ -11,7 +11,7 @@ To do this we use a PHP function, *isset()*. Here's a simple (and pointless) exa
 
 ```php
 <?php
-$someVar;
+$someVar = "Hello world";
 if(isset($someVar)){
     echo "someVar exists"; //echo statement is run, $someVar exists
 }
@@ -20,6 +20,7 @@ if(isset($aDifferentVar)){
 }
 ?>
 ```
+```isset()``` tests if a variable exists and contains a value. 
 
 Here's another example showing how we can test if the user has submitted a form:
 
@@ -43,7 +44,7 @@ if(isset($_POST["submitBtn"])){
 }
 ?>
 ```
-By checking for the existence of ```$_POST["submitBtn"]``` we can tell if the user has submitted the form.
+By checking for the existence of ```$_POST["submitBtn"]``` using ```isset()``` we can tell if the user has submitted the form.
 
 ## Using *isset* to test radio buttons
 We can also *isset* to check if the user has selected from a group of radio buttons.
@@ -70,7 +71,7 @@ Here's the page that will process the form, *city_test.php*.
 <?php
 if(isset($_POST["answer"])){
     $answer = $_POST["answer"];
-    if($answe r=== 'Caracas'){
+    if($answer=== 'Caracas'){
         echo 'Well done you are correct';
     }else{
         echo "You answered {$answer} that's not right";
@@ -87,7 +88,24 @@ if(isset($_POST["answer"])){
 
 
 ## Using *empty* to test text fields
-We can't use *isset* with text fields because text fields will always have a value. If the user doesn't enter anything this value will be an empty string i.e. "". Instead we need to test if the variable is *empty*, the variable exists but doesn't have a value. Have a look at the following example.
+We can't use *isset* with text fields because text fields will always have a value. If the user doesn't enter anything this value will be an empty string i.e. "". Instead we need to test if the variable is *empty*. Have a look at the following example.
+
+```php
+$a = "";
+$b = "some text";
+if(isset($a)){
+    echo "<p>a exists</p>"; //echo statement is run, $a exists
+}
+if(empty($a)){
+    echo "<p>a is empty</p>"; //echo statement is run $a is empty
+}
+if(isset($b)){
+    echo "<p>b exists</p>"; //echo statement is run, $a exists
+}
+if(empty($b)){
+    echo "<p>b is empty</p>"; //echo statement isn't run $b isn't empty
+}
+```
 
 ```html
 <form action = "somepage.php" method = "POST">
