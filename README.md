@@ -8,6 +8,7 @@
 ```
 This will copy the contents of this repository into your codespace.
 - If needed, start Apache i.e. enter `apache2ctl start` in the terminal
+
 Now move onto [Completing the practical work](#practical)
 
 ## If you are using XAMPP
