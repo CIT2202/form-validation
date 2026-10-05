@@ -83,13 +83,13 @@ if(isset($_POST["answer"])){
 ?>
 ```
 
-* If the user didn’t answer the question ```$_POST["answer"]``` doesn't exist and the else action is executed.
+* If the user didn't answer the question ```$_POST["answer"]``` doesn't exist and the else action is executed.
 * If they did answer the question a second (nested) if statement tests if they answered correctly
 * We can test checkboxes, radio buttons and submit buttons to see if they have been set
 
 
-## Using *empty* to test text fields
-We can't use *isset* with text fields because text fields will always have a value. If the user doesn't enter anything this value will be an empty string i.e. "". Instead we need to test if the variable is *empty*. Have a look at the following example.
+## Using `empty()` to test text fields
+We can't use `isset()` with text fields because text fields will always have a value. If the user doesn't enter anything this value will be an empty string i.e. "". Instead, we need to test if the variable is `empty()`. Look at the following example.
 
 ```php
 $a = "";
@@ -109,7 +109,7 @@ if(empty($b)){
 ```
 
 ```html
-<form action = "somepage.php" method = "POST">
+<form action = "process.php" method = "POST">
 <p>
 <label for = "uname">Name:</label><input type = "text" name = "uname" id = "uname">
 <label for = "col">Favourite colour:</label><input type="text" name = "col" id = "col">
@@ -118,7 +118,8 @@ if(empty($b)){
 </form>
 ```
 
-This is the page that will process the form, *somepage.php*.
+This is the page that will process the form, *process.php*.
+
 ```php
 <?php
 if(empty($_POST["uname"])){
@@ -137,6 +138,7 @@ In this example, if the user hasn't entered anything into the text box, the erro
 
 ### Use shorter variable names
 A common approach when form processing is to store values from ```$_POST``` in another variable. This variable will be shorter in length so will be easier to work with. Here's an example:
+
 ```php
 <?php
 $uname = $_POST["uname"];
@@ -151,10 +153,10 @@ Form processing code can quickly become messy. We should try to keep the PHP cod
 * Assign values to variables.
 * The PHP in the HTML is used for displaying messages.
 
-Have a look at the following example. The large block of PHP at the top of the page doesn't feature any echo statements. Instead we store messages in variables e.g. ```$err_msg```. See how we concatenate the error messages i.e. ```$err_msg.=```. This means add to the existing string. The PHP in the actual HTML page is simply used to display messages for the user.
+Look at the following example. The large block of PHP at the top of the page doesn't feature any echo statements. Instead we store messages in variables e.g. ```$err_msg```. See how we concatenate the error messages i.e. ```$err_msg.=```. This means add to the existing string. The PHP in the actual HTML page is simply used to display messages for the user.
 
 ```html
-<form action="somepage.php" method="POST">
+<form action="process.php" method="POST">
 <p>
 <label for="uname">Name:</label><input type="text" name="uname" id="uname">
 <label for="col">Favourite colour:</label><input type="text" name="col" id="col">
@@ -163,7 +165,7 @@ Have a look at the following example. The large block of PHP at the top of the p
 </form>
 ```
 
-This is the page that will process the form, somepage.php.
+This is the page that will process the form, process.php.
 
 ```php
 <?php
