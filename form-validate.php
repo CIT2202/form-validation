@@ -36,6 +36,7 @@ if($validForm){
   //we have passed all the tests so we can display the form data
   echo "<p> You entered an email address of <strong>{$email}</strong>.</p>";
 }else{
+  //we have failed one or more tests so we need to display the error messages
   foreach($errMsgs as $msg){
     echo "<p>{$msg}</p>";
   }
