@@ -1,12 +1,13 @@
 <?php
+$errMsgs = [];
+$validForm = true;
 // To make sure the user hasn't accessed this page by mistake, check to see if the user has submitted the form
 if(isset($_POST["submit"])){
   //To start with, assume the form is valid
-  $validForm = true;
-
   //if the user hasn't completed the email field set $validForm to false
   if(empty($_POST["email"])){
     $validForm = false;
+    $errMsgs[] = "You need to enter an email address.";
   }else{
     $email = $_POST["email"];
   }
@@ -14,8 +15,8 @@ if(isset($_POST["submit"])){
   //add some more if statements in here to test the other form controls.
 
 }else{
-  //terminates the current script see https://www.php.net/manual/en/function.exit.php
-  exit("You shouldn't have got to this page.</body></html>");
+  $validForm = false;
+  $errMsgs[] = "You shouldn't have got to this page.";
 }
 
 
@@ -35,7 +36,10 @@ if($validForm){
   //we have passed all the tests so we can display the form data
   echo "<p> You entered an email address of <strong>{$email}</strong>.</p>";
 }else{
-  echo "<p>You need to complete all the fields. <a href='html-forms.html'>Go back and try again.</a></p>";
+  foreach($errMsgs as $msg){
+    echo "<p>{$msg}</p>";
+  }
+  echo "<p><a href='index.html'>Go back to the form page.</a></p>";
 }
 
 
